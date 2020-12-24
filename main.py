@@ -35,13 +35,13 @@ def main():
                                              f"@{bot} status: `Down`")
                 else:
                     print(f"[INFO] all good with @{bot}")
-                    edit_text += f"➲@{bot} : ✅\n\n"
+                    edit_text += f"➲@{bot} : ✅\n"
                 user_client.read_history(bot)
 
             utc_now = datetime.datetime.utcnow()
             ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
 
-            edit_text += f"__last checked on \n{str(utc_now)} UTC\n{ist_now} IST__"
+            edit_text += f"\n__last checked on \n{str(utc_now)} UTC\n{ist_now} IST__"
 
             user_client.edit_message_text(update_channel, status_message_id,
                                          edit_text)
