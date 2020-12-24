@@ -35,7 +35,7 @@ def main():
                                              f"@{bot} status: `Down`")
                 else:
                     print(f"[INFO] all good with @{bot}")
-                    edit_text += f"➲@{bot} : ✅\n"
+                    edit_text += f"➲@{bot} : ✅\n\n"
                 user_client.read_history(bot)
 
             utc_now = datetime.datetime.utcnow()
