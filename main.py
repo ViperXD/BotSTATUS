@@ -4,27 +4,27 @@ import datetime
 
 import pyrogram
 
-# owner session strings
-user_session_string = os.environ.get("user_session_string")
+# your session strings
+user_session_string = os.environ.get("SESSION_STRING")
 
 # your all bots username without '@' with a space 1 to another
-bots = [i.strip() for i in os.environ.get("bots").split(' ')]
+bots = [i.strip() for i in os.environ.get("BOTS").split(' ')]
 
-# owner username
-bot_owner = os.environ.get("bot_owner")
+# your username without '@'
+bot_owner = os.environ.get("BOT_OWNER")
 
 # your channel username without '@'
-update_channel = os.environ.get("update_channel")
+update_channel = os.environ.get("UPDATE_CHANNEL")
 
-# message id of your channel message
-status_message_id = int(os.environ.get("status_message_id"))
+# message id of your channel bot status message
+status_message_id = int(os.environ.get("STATUS_MESSAGE_ID"))
 
 # api strings from my.telegram.org
-api_id = int(os.environ.get("api_id"))
-api_hash = os.environ.get("api_hash")
+api_id = int(os.environ.get("API_ID"))
+api_hash = os.environ.get("API_HASH")
 
 # time in minutes for sleeping
-time = int(os.environ.get("time"))
+time = int(os.environ.get("TIME"))
 
 user_client = pyrogram.Client(
     user_session_string, api_id=api_id, api_hash=api_hash)
@@ -49,7 +49,7 @@ def main():
                                              f"@{bot} status: `Down`")
                 else:
                     print(f"[INFO] all good with @{bot}")
-                    edit_text += f"<b>➲ @{bot} :** ✅</b>\n\n"
+                    edit_text += f"<b>➲ @{bot} :</b> ✅</b>\n\n"
                 user_client.read_history(bot)
 
             utc_now = datetime.datetime.utcnow()
