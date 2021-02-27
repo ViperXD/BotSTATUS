@@ -4,13 +4,26 @@ import datetime
 
 import pyrogram
 
+# owner session strings
 user_session_string = os.environ.get("user_session_string")
+
+# your all bots username without '@' with a space 1 to another
 bots = [i.strip() for i in os.environ.get("bots").split(' ')]
+
+# owner username
 bot_owner = os.environ.get("bot_owner")
+
+# your channel username without '@'
 update_channel = os.environ.get("update_channel")
+
+# message id of your channel message
 status_message_id = int(os.environ.get("status_message_id"))
+
+# api strings from my.telegram.org
 api_id = int(os.environ.get("api_id"))
 api_hash = os.environ.get("api_hash")
+
+# time in minutes for sleeping
 time = int(os.environ.get("time"))
 
 user_client = pyrogram.Client(
