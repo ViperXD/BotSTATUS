@@ -1,7 +1,7 @@
 {
   "name": "Bug-Free-Broccoli",
   "description": "A bot to upload telegram images to telegraph",
-  "repository": "https://github.com/FayasNoushad/bug-free-broccoli",
+  "repository": "https://github.com/FayasNoushad/Bot-Status",
   "keywords": ["telegram", "bot status", "with user","update channel"],
   "env": {
     "API_ID": {
