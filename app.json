@@ -1,6 +1,6 @@
 {
-  "name": "Bug-Free-Broccoli",
-  "description": "A bot to upload telegram images to telegraph",
+  "name": "Bot-Status",
+  "description": "A user bot for stat telegram bots online status",
   "repository": "https://github.com/FayasNoushad/Bot-Status",
   "keywords": ["telegram", "bot status", "with user","update channel"],
   "env": {
@@ -36,3 +36,5 @@
       "description": "Your session strings",
       "value": ""
     }
+  }
+}
