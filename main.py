@@ -34,7 +34,7 @@ def main():
     with user_client:
         while True:
             print("[INFO] starting to check uptime..")
-            edit_text = f"<b>My Bots Status:</b>\n\n"
+            edit_text = f"<b>Fayas Bots Online Status:</b>\n\n"
             for bot in bots:
                 print(f"[INFO] checking @{bot}")
                 snt = user_client.send_message(bot, '/start')
@@ -52,15 +52,13 @@ def main():
                     edit_text += f"➲ [{bot}](https://telegram.me/{bot}) : <code>Online</code>\n"
                 user_client.read_history(bot)
 
-            utc_time = datetime.datetime.utcnow()
-            utc_now = datetime.datetime.now(pytz.timezone('UTC')).strftime("%d/%m/%y %I:%M:%S %p")
-            ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
+            utc_now = datetime.datetime.now(pytz.timezone('UTC')).strftime("%d/%m/%y %I:%M %p")
 
             edit_text += f"""\n<b>Last checked:</b>\n{str(utc_now)} UTC\n<code>Updated on every hours</code>"""
 
             user_client.edit_message_text(update_channel, status_message_id,
                                          edit_text)
-            print(f"[INFO] everything done! sleeping for 15 mins...")
+            print(f"[INFO] everything done! sleeping for {time} mins...")
 
             time.sleep(time * 60)
 
