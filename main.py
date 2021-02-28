@@ -56,7 +56,7 @@ def main():
             utc_now = datetime.datetime.now(pytz.timezone('UTC')).strftime("%d/%m/%y %I:%M:%S %p")
             ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
 
-            edit_text += f"""\n<b>Last checked:</b>\n{str(utc_now)} UTC\n<code>Updated in every hours</code>"""
+            edit_text += f"""\n<b>Last checked:</b>\n{str(utc_now)} UTC\n<code>Updated on every hours</code>"""
 
             user_client.edit_message_text(update_channel, status_message_id,
                                          edit_text)
