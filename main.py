@@ -41,19 +41,19 @@ def main():
                 msg = user_client.get_history(bot, 1)[0]
                 if snt.message_id == msg.message_id:
                     print(f"[WARNING] @{bot} is down")
-                    edit_text += f"➲ [{bot}](https://telegram.me/{bot}) : <code>Offline</code>\n"
+                    edit_text += f"➲ <a href='https://telegram.me/{bot}'>{bot}</a> : <code>Offline</code>\n"
                     user_client.send_message(bot_owner,
                                              f"@{bot} status: `Down`")
                 else:
                     print(f"[INFO] all good with @{bot}")
-                    edit_text += f"➲ [{bot}](https://telegram.me/{bot}) : <code>Online</code>\n"
+                    edit_text += f"➲ <a href='https://telegram.me/{bot}'>{bot}</a> : <code>Online</code>\n"
                 user_client.read_history(bot)
 
             utc_now = datetime.datetime.now(pytz.timezone('UTC')).strftime("%d/%m/%y %I:%M %p")
 
             edit_text += f"""\n<b>Last checked:</b>\n{str(utc_now)} UTC\n<code>Updated on every hours</code>"""
 
-            user_client.edit_message_text(update_channel, status_message_id, True,
+            user_client.edit_message_text(update_channel, status_message_id, disable_web_page_preview=True, parse_mode="html"
                                          edit_text)
             print(f"[INFO] everything done! sleeping for 60 mins...")
 
