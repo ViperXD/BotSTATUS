@@ -23,9 +23,6 @@ status_message_id = int(os.environ.get("STATUS_MESSAGE_ID"))
 api_id = int(os.environ.get("API_ID"))
 api_hash = os.environ.get("API_HASH")
 
-# time in minutes for sleeping
-time = int(os.environ.get("TIME"))
-
 user_client = pyrogram.Client(
     user_session_string, api_id=api_id, api_hash=api_hash)
 
@@ -39,7 +36,7 @@ def main():
                 print(f"[INFO] checking @{bot}")
                 snt = user_client.send_message(bot, '/start')
 
-                time.sleep(time)
+                time.sleep(60)
 
                 msg = user_client.get_history(bot, 1)[0]
                 if snt.message_id == msg.message_id:
@@ -60,7 +57,7 @@ def main():
                                          edit_text)
             print(f"[INFO] everything done! sleeping for {time} mins...")
 
-            time.sleep(time * 60)
+            time.sleep(60 * 60)
 
 
 main()
