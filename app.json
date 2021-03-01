@@ -20,10 +20,6 @@
       "description": "Your all bots username without '@' with a space 1 to another",
       "value": ""
     },
-    "TIME": {
-      "description": "Time in minutes for sleeping",
-      "value":"15"
-    },
     "UPDATE_CHANNEL": {
       "description": "Your channel username without '@'",
       "value": ""
