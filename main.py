@@ -53,8 +53,7 @@ def main():
 
             edit_text += f"""\n<b>Last checked:</b>\n{str(utc_now)} UTC\n<code>Updated on every hours</code>"""
 
-            user_client.edit_message_text(update_channel, status_message_id, disable_web_page_preview=True, parse_mode="html"
-                                         edit_text)
+            user_client.edit_message_text(update_channel, status_message_id, text=edit_text, disable_web_page_preview=True, parse_mode="html")
             print(f"[INFO] everything done! sleeping for 60 mins...")
 
             time.sleep(60 * 60)
