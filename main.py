@@ -31,7 +31,7 @@ def main():
     with user_client:
         while True:
             print("[INFO] starting to check uptime..")
-            edit_text = f"<b>Fayas Bots Online Status:</b>\n\n"
+            edit_text = f"<b>@VKPROJECTS Bot's Uptime Status:</b>\n\n"
             for bot in bots:
                 print(f"[INFO] checking @{bot}")
                 snt = user_client.send_message(bot, '/start')
@@ -41,12 +41,12 @@ def main():
                 msg = user_client.get_history(bot, 1)[0]
                 if snt.message_id == msg.message_id:
                     print(f"[WARNING] @{bot} is down")
-                    edit_text += f"➲ <a href='https://telegram.me/{bot}'>{bot}</a> : <code>Offline</code>\n"
+                    edit_text += f"⭕️ <a href='https://telegram.me/{bot}'>{bot}</a> : <code>Offline</code>\n"
                     user_client.send_message(bot_owner,
-                                             f"@{bot} status: `Down`")
+                                             f"@{bot} status: DOWN ❌")
                 else:
                     print(f"[INFO] all good with @{bot}")
-                    edit_text += f"➲ <a href='https://telegram.me/{bot}'>{bot}</a> : <code>Online</code>\n"
+                    edit_text += f"⭕️ <a href='https://telegram.me/{bot}'>{bot}</a> : UP  ✅\n"
                 user_client.read_history(bot)
 
             utc_now = datetime.datetime.now(pytz.timezone('UTC')).strftime("%d/%m/%y %I:%M %p")
